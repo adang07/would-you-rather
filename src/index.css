@@ -11,3 +11,186 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main-container {
+  margin-top: 3px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+div.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.avatar {
+  height: 35px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.total {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.optionSelected {
+  font-weight: bold;
+  color: blueviolet;
+}
+
+.centered {
+  height: 32vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centeredcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-tabs__tab-list {   justify-content: center; border-bottom: 1px solid #aaa; margin: 0 0 10px; padding: 0; } .react-tabs__tab {   justify-content: center; display: inline-block;
+  border: 1px solid transparent; border-bottom: none; bottom: -1px; position: relative; list-style: none; padding: 6px 12px;
+  cursor: pointer; } .react-tabs__tab--selected { background: #fff; border-color: #aaa; color: black; border-radius: 5px 5px
+  0 0; } .react-tabs__tab-panel { display: none; } .react-tabs__tab-panel--selected { display: block; } .react-tabs__tab--disabled
+  { color: GrayText; cursor: default; } .react-tabs__tab:focus { box-shadow: 0 0 5px hsl(208, 99%, 50%); border-color: hsl(208,
+  99%, 50%); outline: none; } .react-tabs__tab:focus:after { content: ""; position: absolute; height: 5px; left: -4px; right:
+  -4px; bottom: -5px; background: #fff; }
+
+  .progress-bar {
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #007bff;
+    transition: width .6s ease;
+}
+.progress, .progress-bar {
+  display: flex;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(45deg,hsla(0,0%,100%,.15) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.15) 0,hsla(0,0%,100%,.15) 75%,transparent 0,transparent);
+  background-size: 1rem 1rem;
+}
+
+.bg-light {
+  background-color: #f8f9fa!important;
+}
+.navbar, .navbar .container, .navbar .container-fluid, .navbar .container-lg, .navbar .container-md, .navbar .container-sm, .navbar .container-xl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar {
+  position: relative;
+  padding: .5rem 1rem;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+.navbar-expand-lg {
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.navbar-light .navbar-toggler {
+  color: rgba(0,0,0,.5);
+  border-color: rgba(0,0,0,.1);
+}
+
+.navbar-expand-lg .navbar-toggler {
+  display: none;
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+}
+.mr-auto, .mx-auto {
+    margin-right: auto!important;
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+.nav-link {
+  display: block;
+  padding: .5rem 1rem;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  justify-content: center;
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+.nav-tabs .nav-link {
+  justify-content: center;
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+.nav-tabs .nav-item {
+  justify-content: center;
+  margin-bottom: -1px;
+}
+.nav-link {
+  justify-content: center;
+  display: block;
+  padding: .5rem 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.btn{
+  margin-bottom: 1rem;
+}
+
+.pull-right {
+  @extend .float-right;
+}
+
+.padding{
+  padding-right: .5rem;
+  padding-left: .5rem;
+  margin-bottom: 0;
+  justify-content: center;
+    display: block;
+    padding: .5rem 1rem;
+}
