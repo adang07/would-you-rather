@@ -5,11 +5,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {handleSaveAnswer} from '../actions/question'
 import {Redirect} from "react-router-dom";
+import QuestionPollResults from './QuestionPollResults';
 
 class QuestionPoll extends Component {
     state = {
-        optionSelected: '',
-        answerSubmitted: false
+        optionSelected: ''
     }
 
     handleSubmit =(id, e) => {
@@ -21,7 +21,6 @@ class QuestionPoll extends Component {
             dispatch(handleSaveAnswer(id, answer))
         }
 
-        this.setState(() => ({answerSubmitted: true}))
         console.log(this.props.users)
     }
 
@@ -31,17 +30,17 @@ class QuestionPoll extends Component {
     }
 
     render() {
-        const { question, author, id, pathNotFound, optionOne, optionTwo  } = this.props
-       
-        if(this.state.answerSubmitted){
-            return <Redirect to={`/question/${id}/results`}/>
-        }
+        const {  author, id, pathNotFound, optionOne, optionTwo  } = this.props
 
         if(pathNotFound){
             return (<Redirect to="/404"/>)
         }
 
         return (
+            <div>
+            {this.props.hasAnswer ? 
+                <QuestionPollResults id={id}/>
+                : 
             <div className='centeredcontent'>
             <Card style={{ width: '20rem' }} className='row justify-content-center'>
                 <Card.Img variant="top" src={author.avatarURL} alt={`Avatar of ${author.name}`} className='avatar' size="80" />
@@ -78,22 +77,25 @@ class QuestionPoll extends Component {
                 </Card.Body>
             </Card>
             </div>
-        )
+            }
+            </div>
+        ); 
     }
 }
 
-function mapStateToProps({ questions, users }, props) {
-    const id = props.match.params.id
+function mapStateToProps({ questions, users, authedUser }, props) {
+    const id = props.match.params.id;
     const question = questions[id];
     let pathNotFound = question ? false : true;
-    
+    const answers = users[authedUser].answers;
     return {
         id,
         question,
         author: question ? users[question.author] : null,
         pathNotFound,
         optionOne : question ? question.optionOne : null,
-        optionTwo : question ? question.optionTwo : null
+        optionTwo : question ? question.optionTwo : null,
+        hasAnswer: answers.hasOwnProperty(id) ? answers[id] : null
     } 
 }
 

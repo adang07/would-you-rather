@@ -9,8 +9,8 @@ import { Redirect } from 'react-router-dom';
 class Question extends Component {
     render() {
         const { question, pathNotFound } = this.props
-        const { name, id, avatar, optionOne, hasVoted } = question;
-        const redirectLink = hasVoted ? `/question/${id}/results` : `/question/${id}`;
+        const { name, id, avatar, optionOne } = question;
+        const redirectLink = `/question/${id}`;
     
         if(pathNotFound){
             return (<Redirect to="/404"/>)
@@ -40,7 +40,7 @@ class Question extends Component {
 function mapStateToProps({ authedUser, users, questions }, { id }) {
     const question = questions[id]
     const pathNotFound = question ? false : true;
-
+    
     return {
         id,
         authedUser,
